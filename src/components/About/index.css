@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap');
+
+.bismi-about {
+  padding: 4rem 0;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.container {
+  max-width: 96rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.top-section {
+  min-height: 50vh;
+  margin-bottom: 4rem;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .grid-layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+.video-container {
+  position: relative;
+  padding-top: 56.25%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(255, 165, 0, 0.2);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.description .heading {
+  font-family: 'Roboto', sans-serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: #3e1b1b;
+  margin-bottom: 1.5rem;
+}
+
+.paragraph {
+  font-family: 'sans-serif';
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.bottom-section {
+  min-height: 40vh;
+  text-align: center;
+}
+
+.subheading {
+  font-family: 'Roboto', cursive;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  color: #3e1b1b;
+  margin-bottom: 3rem;
+}
+
+.grid-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+}
+
+.trust-box {
+  text-align: center;
+  padding: 1rem;
+  margin: 0.5rem;
+  transition: all 0.3s;
+}
+
+.trust-box:hover {
+  border-radius: 20px;
+  padding-top: 10px;
+}
+
+.trust-box:hover .icon-circle {
+  background-color: #29de62;
+  color: #ffffff;
+  transition: all 0.6s;
+}
+
+@media (hover: none) {
+  .trust-box:hover {
+    padding-top: 1rem; /* Revert padding change */
+    background-color: transparent;
+  }
+
+  .trust-box:hover .icon-circle {
+    background-color: #fce4cc;
+    color: #29de62;
+  }
+}
+
+.icon-circle {
+  background-color: #fce4cc;
+  width: 4.5rem;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  margin: 0 auto 1rem;
+  color: #29de62;
+}
+
+.icon-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.icon-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.875rem;
+  color: #555;
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn 1s ease-in forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 1s ease-in forwards;
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.9s ease-in-out forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.delay-2 {
+  animation-delay: 0.2s;
+}
+
+.delay-3 {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.9); opacity: 0; }
+  60% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* --- Responsive Design --- */
+
+/* Tablet and smaller desktops */
+@media screen and (max-width: 900px) {
+  .grid-layout {
+    grid-template-columns: 1fr; /* Stack video and description */
+  }
+}
+
+/* Mobile Devices */
+@media screen and (max-width: 768px) {
+  .grid-icons {
+    grid-template-columns: repeat(2, 1fr); /* 2 icons per row */
+    gap: 1rem;
+  }
+
+  .subheading {
+    font-size: 1.45rem;
+  }
+
+  .video-container {
+    box-shadow: none;
+  }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  .grid-icons {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1rem; 
+  }
+
+  .description .heading {
+    font-size: 1.5rem;
+  }
+
+  .paragraph {
+    font-size: 1rem;
+  }
+
+  .icon-title {
+    font-size: 0.9rem; 
+  }
+
+  .icon-text {
+    font-size: 0.75rem; 
+  }
+
+  .trust-box {
+    padding: 0.5rem; 
+  }
+
+  .icon-circle {
+    width: 3.5rem; 
+    height: 3.5rem;
+  }
+}
