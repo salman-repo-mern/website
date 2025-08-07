@@ -40,7 +40,7 @@ const Footer = () => {
             </button>
             <button
               className="social-button"
-              onClick={() => window.open("https://instagram.com/ammakıroti", "_blank")}
+              onClick={() => window.open("https://facebook.com/khader.khaderali.9", "_blank")}
             >
               <FaFacebook className="button-icon" />
             </button>
@@ -142,7 +142,7 @@ const Footer = () => {
               </button>
               <button
                 className="social-button"
-                onClick={() => window.open("https://www.youtube.com/@khaderali8379", "_blank")}
+              onClick={() => window.open("https://facebook.com/khader.khaderali.9", "_blank")}
               >
                 <FaFacebook className="button-icon" />
               </button>

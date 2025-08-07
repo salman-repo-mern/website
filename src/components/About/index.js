@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Award, CheckCircle, Sparkles } from 'lucide-react';
+import { Shield, Award, CheckCircle, Sparkles , BadgeCheck, Building2 } from 'lucide-react';
 import './index.css';
 
 const About = () => {
@@ -27,12 +27,12 @@ const About = () => {
             <div className="description animate-slide-up">
               <h2 className="heading">About Bismi Fresh Foods</h2>
               <p className="paragraph">
-                At Bismi Fresh Foods, we bring you the authentic taste of traditional Indian breads and delicacies.
-                Our journey began with a passion for preserving the age-old recipes and techniques passed down through generations.
+                At Bismi Fresh Foods, we don’t just make food — we preserve heritage. 
+                Every bite tells a story of tradition, crafted with care using time-honored recipes and quality ingredients.
               </p>
               <p className="paragraph">
-                Every product is crafted with the finest ingredients, ensuring freshness, quality, and that homemade taste
-                you've been looking for. From fluffy parotas to crispy pooris, we deliver tradition to your table.
+                From soft, layered parotas to golden pooris and homestyle sweets, our products bring the comfort of authentic Indian flavors right to your plate
+                 — fresh, flavorful, and made with love.
               </p>
             </div>
           </div>
@@ -47,7 +47,7 @@ const About = () => {
                 <Shield size={32} />
               </div>
               <h4 className="icon-title">FSSAI Certified</h4>
-              <p className="icon-text">License No: 12345678901234</p>
+              <p className="icon-text">License No: 20124251000486</p>
             </div>
 
             <div className="trust-box animate-bounce-in delay-1">
@@ -55,7 +55,7 @@ const About = () => {
                 <Award size={32} />
               </div>
               <h4 className="icon-title">Trademark Certified</h4>
-              <p className="icon-text">Registered & Authentic</p>
+              <p className="icon-text">License No: 5777549</p>
             </div>
 
             <div className="trust-box animate-bounce-in delay-2">
@@ -73,6 +73,21 @@ const About = () => {
               <h4 className="icon-title">Fresh Daily</h4>
               <p className="icon-text">Made Fresh Every Day</p>
             </div>
+            <div className="trust-box animate-bounce-in delay-4">
+            <div className="icon-circle">
+              <BadgeCheck size={32} /> 
+            </div>
+            <h4 className="icon-title">GSTIN</h4>
+            <p className="icon-text">No: 37DPVPA0357F1ZT</p>
+          </div>
+
+          <div className="trust-box animate-bounce-in delay-5">
+            <div className="icon-circle">
+              <Building2 size={32} /> 
+            </div>
+            <h4 className="icon-title">MSME Certified</h4>
+            <p className="icon-text">No: UDYAM-AP-02-0019456</p>
+          </div>
           </div>
         </div>
       </div>

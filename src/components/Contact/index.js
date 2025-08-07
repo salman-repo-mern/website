@@ -186,7 +186,7 @@ const Contact = () => {
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                   <h4 className="detail-title">Established</h4>
                   <p className="detail-text">
-                    Since 2022
+                    Since 2016
                   </p>
                 </div>
               </div>

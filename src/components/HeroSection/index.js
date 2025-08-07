@@ -28,7 +28,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % imageUrls.length);
-    }, 4000); // 4 seconds
+    }, 3000); // 4 seconds
     return () => clearInterval(interval);
   }, []);
 
@@ -44,7 +44,7 @@ const Hero = () => {
       <div className="hero-content">
         <h1 className="hero-heading">Welcome to Bismi Fresh Foods</h1>
         <p className="hero-subtitle">
-          Healthy. Fresh. Homemade Rotis & 100% pure Veg
+          Good for Health & 100% pure Veg
         </p>
 
         <div className="hero-buttons">
