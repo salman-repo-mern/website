@@ -55,7 +55,7 @@ const Hero = () => {
             className="btn-outline"
             onClick={() =>
               window.open(
-                'https://wa.me/+919876543210?text=' +
+                'https://wa.me/+916300414449?text=' +
                   encodeURIComponent('Hello, Can I get more information about this?'),
                 '_blank'
               )

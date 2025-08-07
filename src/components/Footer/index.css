@@ -180,3 +180,14 @@
     padding: 0.4rem 0.8rem;
   }
 }
+
+.detail-link{
+  color:#000000
+}
+.contact-number{
+  color: #f9f9f9;
+  text-decoration: none;
+}
+.contact-number:hover{
+  color: #ff9900;
+}

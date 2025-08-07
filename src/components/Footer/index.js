@@ -9,6 +9,7 @@ import {
   FaFacebook
 } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa6";
+import { IoMdMailOpen } from "react-icons/io";
 
 const Footer = () => {
   return (
@@ -33,7 +34,7 @@ const Footer = () => {
             </button>
             <button
               className="social-button"
-              onClick={() => window.open("https://instagram.com/ammakıroti", "_blank")}
+              onClick={() => window.open("https://instagram.com/bismi_fresh_foods_", "_blank")}
             >
               <FaInstagram className="button-icon" />
             </button>
@@ -42,11 +43,6 @@ const Footer = () => {
               onClick={() => window.open("https://instagram.com/ammakıroti", "_blank")}
             >
               <FaFacebook className="button-icon" />
-            </button><button
-              className="social-button"
-              onClick={() => window.open("https://instagram.com/ammakıroti", "_blank")}
-            >
-              <FaWhatsapp className="button-icon" />
             </button>
           </div>
         </div>
@@ -90,7 +86,11 @@ const Footer = () => {
               <h4 className="footer-heading">Contact Us</h4>
               <div className="contact-row">
                 <FaPhoneAlt className="icon" />
-                <span>+91 63004 14449</span>
+                  <a href="tel:+916300414449" className="contact-number">+91 63004 14449</a>
+              </div>
+              <div className="contact-row">
+                <IoMdMailOpen className="icon" />
+                 <a href="mailto:khaderali.1988@gmail.com" className="contact-number">khaderali.1988@gmail.com</a>
               </div>
               <div className="contact-row">
                 <FaMapMarkerAlt className="icon" />
@@ -117,18 +117,22 @@ const Footer = () => {
             {/* Social */}
             <div className="footer-section">
               <h4 className="footer-heading">Connect with Us</h4>
+             <button
+              className="social-button"
+              onClick={() =>
+                window.open(
+                  "https://wa.me/916300414449?text=Hi%21%20I%20would%20like%20to%20know%20about%20from%20Bismi%20Fresh%20Foods.",
+                  "_blank"
+                )
+              }
+            >
+              <FaWhatsapp className="button-icon" />
+            </button>
               <button
                 className="social-button"
-                onClick={() => window.open("https://wa.me/919876543210", "_blank")}
+                onClick={() => window.open("https://instagram.com/bismi_fresh_foods_", "_blank")}
               >
-                <FaWhatsapp className="button-icon"/>
-              </button>
-              <button
-                className="social-button"
-                onClick={() => window.open("https://instagram.com/ammakıroti", "_blank")}
-              >
-                <FaInstagram className="button-icon" />
-                
+                <FaInstagram className="button-icon" />                
               </button>
               <button
                 className="social-button"

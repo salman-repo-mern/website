@@ -13,7 +13,7 @@ const About = () => {
             <div className="video-wrapper animate-fade-in">
               <div className="video-container">
                 <iframe
-                  src="https://www.youtube.com/embed/BNfAf4To73c"
+                  src="https://www.youtube.com/embed/TDcmSxRqh0g"
                   title="How Parota is Made"
                   className="iframe"
                   frameBorder="0"

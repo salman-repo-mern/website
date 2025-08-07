@@ -1,4 +1,6 @@
-     * {
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+* {
           margin: 0;
           padding: 0;
           box-sizing: border-box;
@@ -9,7 +11,6 @@
           overflow-x: hidden;
         }
 
-        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
         .hero-section {
           position: relative;
@@ -165,3 +166,5 @@
             transform: translateY(0);
           }
         }
+
+      

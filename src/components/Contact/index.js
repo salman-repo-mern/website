@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Phone, MapPin, Send, CheckCircle, Calendar } from 'lucide-react';
+import emailjs from 'emailjs-com';
+import { Mail, Phone, MapPin, Send, CheckCircle, Calendar } from 'lucide-react';
 import './index.css';
 
 const Contact = () => {
-  // State to manage form input data
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -11,34 +11,37 @@ const Contact = () => {
     message: '',
   });
 
-  // State to track form submission status
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  /**
-   * Handles form submission.
-   * @param {React.FormEvent} e - The form submission event.
-   */
   const handleSubmit = (e) => {
     e.preventDefault();
-    // In a real application, you would send the data to a server here.
-    console.log('Form Data Submitted:', formData);
 
-    // Show the success message
-    setIsSubmitted(true);
+    emailjs.send(
+      'service_xs9ip2t',
+      'template_kz8dh8y',
+      {
+        name: formData.name,
+        phone: formData.phone,
+        address: formData.address,
+        message: formData.message,
+      },
+      'jy-WhRgVzEH6j_6Hr'
+    )
+      .then((result) => {
+        console.log('Email sent successfully:', result.text);
+        setIsSubmitted(true);
+        setFormData({ name: '', phone: '', address: '', message: '' });
 
-    // Reset form fields
-    setFormData({ name: '', phone: '', address: '', message: '' });
-
-    // Hide the success message after 5 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-    }, 5000);
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
+      })
+      .catch((error) => {
+        console.error('Email sending error:', error);
+        alert('Failed to send message. Please try again later.');
+      });
   };
 
-  /**
-   * Handles changes in form inputs and updates the state.
-   * @param {React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>} e - The input change event.
-   */
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -49,7 +52,6 @@ const Contact = () => {
   return (
     <section id="contact" className="contact-section">
       <div className="container">
-        {/* Section Header */}
         <div className="section-header">
           <h2 className="section-title">Get in Touch</h2>
           <p className="section-subtitle">
@@ -57,13 +59,10 @@ const Contact = () => {
           </p>
         </div>
 
-        {/* Main Grid Layout */}
         <div className="contact-grid">
-          {/* Left Column: Contact Form */}
           <div className="form-container">
             <h3 className="form-title">Send us a Message</h3>
             <form onSubmit={handleSubmit} className="contact-form">
-              {/* Name Input */}
               <div className="form-group">
                 <label htmlFor="name" className="form-label">Name</label>
                 <input
@@ -78,7 +77,6 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Phone Input */}
               <div className="form-group">
                 <label htmlFor="phone" className="form-label">Contact Number</label>
                 <input
@@ -93,7 +91,6 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Address Textarea */}
               <div className="form-group">
                 <label htmlFor="address" className="form-label">Address</label>
                 <textarea
@@ -108,7 +105,6 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Message Textarea */}
               <div className="form-group">
                 <label htmlFor="message" className="form-label">Message</label>
                 <textarea
@@ -123,7 +119,6 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Submit Button */}
               <div className="form-group">
                 <button type="submit" className="submit-btn">
                   <Send size={18} />
@@ -131,7 +126,6 @@ const Contact = () => {
                 </button>
               </div>
 
-              {/* Success Message */}
               {isSubmitted && (
                 <div className="success-message">
                   <CheckCircle size={20} />
@@ -141,9 +135,7 @@ const Contact = () => {
             </form>
           </div>
 
-          {/* Right Column: Map and Info */}
           <div className="info-column">
-            {/* Map Embed */}
             <div className="map-embed">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.7452162265744!2d79.10096921482391!3d13.21667361306896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad38a2e6e3c6e1%3A0x8bb6e663a2f78e9d!2sNo.14%20G%201133%2C%20Goolingspet%20St%2C%20Chittoor%2C%20Andhra%20Pradesh%20517001!5e0!3m2!1sen!2sin!4v1722754978473!5m2!1sen!2sin"
@@ -157,22 +149,30 @@ const Contact = () => {
               ></iframe>
             </div>
 
-            {/* Contact Details */}
             <div className="details-container">
               <div className="detail-item">
                 <div className="icon-wrapper">
                   <Phone className="icon" />
                 </div>
-                <div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                   <h4 className="detail-title">Phone</h4>
                   <a href="tel:+916300414449" className="detail-link">+91 63004 14449</a>
                 </div>
               </div>
               <div className="detail-item">
                 <div className="icon-wrapper">
+                  <Mail className="icon" />
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                  <h4 className="detail-title">Email</h4>
+                  <a href="mailto:khaderali.1988@gmail.com" className="detail-link">khaderali.1988@gmail.com</a>
+                </div>
+              </div>
+              <div className="detail-item">
+                <div className="icon-wrapper">
                   <MapPin className="icon" />
                 </div>
-                <div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }} className="address-description">
                   <h4 className="detail-title">Address</h4>
                   <p className="detail-text">
                     No.14 G 1133, Goolingspet Street, Chittoor, Andhra Pradesh, 517001
@@ -183,7 +183,7 @@ const Contact = () => {
                 <div className="icon-wrapper">
                   <Calendar className="icon" />
                 </div>
-                <div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                   <h4 className="detail-title">Established</h4>
                   <p className="detail-text">
                     Since 2022
@@ -198,4 +198,4 @@ const Contact = () => {
   );
 };
 
-export default Contact
+export default Contact;

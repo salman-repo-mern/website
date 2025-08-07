@@ -73,8 +73,8 @@ const Products = () => {
   ];
 
   const handleOrder = (productName) => {
-    const message = `Hi! I would like to order ${productName} from Bismi Fresh Foods.`;
-    const whatsappUrl = `https://wa.me/+919876543210?text=${encodeURIComponent(message)}`;
+    const message = `Hi! I would like to know about ${productName} from Bismi Fresh Foods.`;
+    const whatsappUrl = `https://wa.me/+916300414449?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -92,7 +92,7 @@ const Products = () => {
 
         <div className="product-grid">
           {products.map((product) => (
-            <div 
+            <div  
             key={product.id}
             className="product-card"
           >
