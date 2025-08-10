@@ -1,5 +1,5 @@
 import { ShoppingCart } from 'lucide-react';
-import { FaWhatsapp } from "react-icons/fa6";
+import { FaWhatsapp , FaPhone} from "react-icons/fa6";
 
 import './index.css';
 
@@ -146,14 +146,20 @@ const Products = () => {
         <div className="cta-box">
           <h3>Can't decide? Order a combo pack!</h3>
           <p>Mix and match your favorites for a complete meal experience</p>
-          <button 
+          <div>
+            <button 
             onClick={() => handleOrder('Combo Pack')}
             className="combo-button"
           >
-            Order via WhatsApp  
-            <FaWhatsapp className='icons'
-        />
+             <FaWhatsapp className='icons' /> Order via WhatsApp  
           </button>
+          <button
+            onClick={() => window.location.href = 'tel:+916300414449'}
+            className="call-button"
+          >
+           <FaPhone className="icons"/> Call: +91 63004 14449
+          </button>
+          </div>
         </div>
       </div>
     </section>

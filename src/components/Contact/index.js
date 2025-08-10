@@ -17,15 +17,15 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs.send(
-      'service_xs9ip2t',
-      'template_kz8dh8y',
+      'service_s2vxdbl',
+      'template_rivdydm',
       {
         name: formData.name,
         phone: formData.phone,
         address: formData.address,
         message: formData.message,
       },
-      'jy-WhRgVzEH6j_6Hr'
+      'UsKdsRw03xFZJXak-'
     )
       .then((result) => {
         console.log('Email sent successfully:', result.text);
