@@ -1,10 +1,12 @@
-import { ShoppingCart } from 'lucide-react';
 import { FaWhatsapp , FaPhone} from "react-icons/fa6";
-
+import React, { useState } from 'react';
+import { ShoppingCart, X } from 'lucide-react';
 import './index.css';
 
 
 const Products = () => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const products = [
     { 
       id: 1,
@@ -13,7 +15,8 @@ const Products = () => {
       quantity: " 10 pcs",
       price: "₹80",
       tag: "Trending",
-    },
+      description: "Flaky and soft layered flatbread that’s crispy on the outside and tender inside.",
+    },    
         {
       id: 2,
       name: "Chapathi",
@@ -21,6 +24,7 @@ const Products = () => {
       quantity: "10 pcs",
       price: "₹60",
       tag: "High Protein",
+        description: "Soft, wholesome whole wheat flatbreads that make a healthy and filling meal.",
     },
 
     {
@@ -30,6 +34,7 @@ const Products = () => {
       quantity: "10 pcs",
       price: "₹60",
       tag: "Traditional",
+       description: "Golden, puffed-up fried bread that’s perfect with spicy curries or chutneys.",
     },
     {
       id: 4,
@@ -38,6 +43,7 @@ const Products = () => {
       quantity: "10 pcs",
       price: "₹60",
         tag: "Trending",
+        description: "Light and soft flatbreads made without oil, great for a healthy diet.",
     },
     {
       id: 5,
@@ -46,6 +52,7 @@ const Products = () => {
       quantity: "300g ",
       price: "₹70",
         tag: "Spicy Delight",
+       description: "A flavorful and spicy stir-fry made with shredded parota and fresh chillies.",
     },
     {
       id: 6,
@@ -54,6 +61,7 @@ const Products = () => {
       quantity: "100g , 250g ",
       price: "₹30 , ₹70",
         tag: "Sweet Treat",
+      description: "A rich, creamy sweet made by slowly cooking milk to perfection.",
     },
     {
       id: 7,
@@ -62,6 +70,7 @@ const Products = () => {
       quantity: "24 pcs",
       price: "₹40",
         tag: "Bismi Special",
+       description: "Buttery and crunchy biscuits, a perfect companion for your evening tea.",
     },
     {
       id: 8,
@@ -70,6 +79,7 @@ const Products = () => {
       quantity:'250g', 
       price: "₹70",
       tag: "Fry to eat",
+      description: "Spicy, crunchy snacks that are ready to fry and enjoy anytime.",
     },
         {
       id: 9,
@@ -78,6 +88,7 @@ const Products = () => {
       quantity:undefined, 
       price: '₹70',
       tag: "Madurai Traditional",
+      description: "A refreshing and creamy cold drink made with milk, almond gum, and ice cream.",
     },
     {
       id: 10,
@@ -86,6 +97,7 @@ const Products = () => {
       quantity:undefined, 
       price: undefined,
       tag: "Upcoming",
+      description: "Steamed rice noodle nests that are light, soft, and perfect with curry or coconut chutney.",
     }
   ];
 
@@ -93,6 +105,7 @@ const Products = () => {
     const message = `Hi! I would like to know about ${productName} from Bismi Fresh Foods.`;
     const whatsappUrl = `https://wa.me/+916300414449?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
+    setIsModalOpen(false);
   };
 
   return (
@@ -112,8 +125,8 @@ const Products = () => {
             <div  
             key={product.id}
             className="product-card"
+            onClick={() => { setSelectedProduct(product); setIsModalOpen(true); }}
           >
-
               <div className="product-image">
                 {product.tag && (
                 <span className="product-badge">{product.tag}</span>
@@ -128,9 +141,7 @@ const Products = () => {
                   <span className='quantity'>{product.quantity}</span>
                   <span className="price">{product.price}</span>
                 </div>
-
-                <p className="description">{product.description}</p>
-
+               {product.tag !== "Upcoming" && (
                 <button
                   onClick={() => handleOrder(product.name)}
                   className="order-button"
@@ -138,6 +149,7 @@ const Products = () => {
                   <ShoppingCart className="icon" />
                   Order Now
                 </button>
+              )}
               </div>
             </div>
           ))}
@@ -162,6 +174,29 @@ const Products = () => {
           </div>
         </div>
       </div>
+      {isModalOpen && selectedProduct && (
+        <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setIsModalOpen(false)}>
+              <X size={19} />
+            </button>
+            <img src={selectedProduct.image} alt={selectedProduct.name} />
+            <div className="modal-details">
+              <h2>{selectedProduct.name}</h2>
+              <div className="modal-price-container">
+              <h3>{selectedProduct.price}</h3>
+              <p>{selectedProduct.quantity}</p>
+              </div>
+              <p>{selectedProduct.description}</p>
+              {selectedProduct.tag !== 'Upcoming' && (
+                <button onClick={() => handleOrder(selectedProduct.name)} className="modal-order-btn">
+                <ShoppingCart size={18} /> 
+                Order via WhatsApp
+              </button>)}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
