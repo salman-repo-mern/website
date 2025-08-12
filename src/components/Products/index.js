@@ -26,7 +26,7 @@ const Products = () => {
     {
       id: 3,
       name: "Puri",
-      image: "https://5.imimg.com/data5/ANDROID/Default/2023/6/313459445/II/XK/UK/20956119/product-jpeg-500x500.jpg",
+      image: "https://res.cloudinary.com/dusyxcqt9/image/upload/v1754973819/poori_nsvnvx.jpg",
       quantity: "10 pcs",
       price: "₹60",
       tag: "Traditional",
@@ -145,7 +145,7 @@ const Products = () => {
 
         <div className="cta-box">
           <h3>Can't decide? Order a combo pack!</h3>
-          <p>Mix and match your favorites for a complete meal experience</p>
+          <p>We also provide large quantities for <b> marriages, events, and functions</b> — freshly made, packed, and delivered on time.</p>
           <div>
             <button 
             onClick={() => handleOrder('Combo Pack')}
