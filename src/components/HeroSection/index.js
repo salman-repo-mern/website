@@ -6,25 +6,26 @@ import './index.css';
 
 // Use landscape/wid e images for larger screens
 const desktopImageUrls = [
- "https://5.imimg.com/data5/ANDROID/Default/2023/4/303104669/DX/EH/BR/20956119/product-jpeg-500x500.jpg",
+  "https://res.cloudinary.com/dusyxcqt9/image/upload/v1754570606/Screenshot_2025-08-07_175413_a8y9gw.png",
   "https://5.imimg.com/data5/ANDROID/Default/2023/6/313459445/II/XK/UK/20956119/product-jpeg-500x500.jpg",
-  "https://tastythriftytimely.com/wp-content/uploads/2025/06/Chapati-7.jpg",
-  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_240,h_240/bvrtu4exc6ypkhlyxazq",
+  "https://res.cloudinary.com/dusyxcqt9/image/upload/v1755165063/Chapathi-desktop_bhutiu.png",
+  "https://res.cloudinary.com/dusyxcqt9/image/upload/v1755165058/parota-desktop_m8so6c.png",
   "https://res.cloudinary.com/dusyxcqt9/image/upload/v1754279537/Screenshot_2025-08-04_092054_qqn5px.png",
-  "https://5.imimg.com/data5/SELLER/Default/2023/10/350801823/EX/NU/UQ/20956119/new-product-500x500.jpeg",
-  "https://5.imimg.com/data5/ANDROID/Default/2023/4/303105557/UR/BH/OT/20956119/product-jpeg-500x500.jpg",
+  "https://res.cloudinary.com/dusyxcqt9/image/upload/v1755165022/kova-desktop_smgf8l.png",
+  "https://res.cloudinary.com/dusyxcqt9/image/upload/v1755165033/osmania_biscuits_rz08ia.png",
   "https://res.cloudinary.com/dusyxcqt9/image/upload/v1754279720/Screenshot_2025-08-04_092501_erdbxc.png",
+  "https://res.cloudinary.com/dusyxcqt9/image/upload/v1755165019/parota-desktop1_ty8cmv.png",
+  "https://res.cloudinary.com/dusyxcqt9/image/upload/v1754568739/WhatsApp_Image_2025-08-07_at_17.41.52_b61c733e_ao2lrg.jpg"
 ];
 
 // Use portrait/square images for smaller screens for a better fit
 const mobileImageUrls = [
- "https://5.imimg.com/data5/ANDROID/Default/2023/4/303104669/DX/EH/BR/20956119/product-jpeg-500x500.jpg",
-  "https://5.imimg.com/data5/ANDROID/Default/2023/6/313459445/II/XK/UK/20956119/product-jpeg-500x500.jpg",
+ "https://res.cloudinary.com/dusyxcqt9/image/upload/v1755165050/parota-mobile1_yfeqp2.png",
   "https://tastythriftytimely.com/wp-content/uploads/2025/06/Chapati-7.jpg",
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_240,h_240/bvrtu4exc6ypkhlyxazq",
   "https://res.cloudinary.com/dusyxcqt9/image/upload/v1754279537/Screenshot_2025-08-04_092054_qqn5px.png",
-  "https://5.imimg.com/data5/SELLER/Default/2023/10/350801823/EX/NU/UQ/20956119/new-product-500x500.jpeg",
-  "https://5.imimg.com/data5/ANDROID/Default/2023/4/303105557/UR/BH/OT/20956119/product-jpeg-500x500.jpg",
+  "https://res.cloudinary.com/dusyxcqt9/image/upload/v1755165020/kova-mobile_du1eo3.png",
+  "https://res.cloudinary.com/dusyxcqt9/image/upload/v1755165033/osmania_biscuits_rz08ia.png",
   "https://res.cloudinary.com/dusyxcqt9/image/upload/v1754279720/Screenshot_2025-08-04_092501_erdbxc.png",];
 
 
@@ -81,7 +82,7 @@ const Hero = () => {
     return () => {
       resetTimeout();
     };
-  }, [currentIndex, imageUrls]); // Add imageUrls to dependency array
+  }, [currentIndex, imageUrls]); 
 
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
