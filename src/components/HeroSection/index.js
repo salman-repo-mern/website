@@ -7,7 +7,6 @@ import './index.css';
 // Use landscape/wid e images for larger screens
 const desktopImageUrls = [
   "https://res.cloudinary.com/dusyxcqt9/image/upload/v1754570606/Screenshot_2025-08-07_175413_a8y9gw.png",
-  "https://5.imimg.com/data5/ANDROID/Default/2023/6/313459445/II/XK/UK/20956119/product-jpeg-500x500.jpg",
   "https://res.cloudinary.com/dusyxcqt9/image/upload/v1755165063/Chapathi-desktop_bhutiu.png",
   "https://res.cloudinary.com/dusyxcqt9/image/upload/v1755165058/parota-desktop_m8so6c.png",
   "https://res.cloudinary.com/dusyxcqt9/image/upload/v1754279537/Screenshot_2025-08-04_092054_qqn5px.png",
