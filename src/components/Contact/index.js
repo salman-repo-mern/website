@@ -138,7 +138,7 @@ const Contact = () => {
           <div className="info-column">
             <div className="map-embed">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.7452162265744!2d79.10096921482391!3d13.21667361306896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad38a2e6e3c6e1%3A0x8bb6e663a2f78e9d!2sNo.14%20G%201133%2C%20Goolingspet%20St%2C%20Chittoor%2C%20Andhra%20Pradesh%20517001!5e0!3m2!1sen!2sin!4v1722754978473!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.392387755359!2d79.1000!3d13.2000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad42c6d21e!2sGoolingspet%20Street%2C%20Chittoor%2C%20Andhra%20Pradesh%20517001!5e0!3m2!1sen!2sin!4v1720000000000!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -174,8 +174,11 @@ const Contact = () => {
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }} className="address-description">
                   <h4 className="detail-title">Address</h4>
-                  <p className="detail-text">
-                    No.14 G 1133, Goolingspet Street, Chittoor, Andhra Pradesh, 517001
+                  <p  style={{marginLeft:'0px'}}>
+                    <a className="detail-text" href="https://www.google.com/maps?q=No.14+G+1133,+Goolingspet+Street,+Chittoor,+Andhra+Pradesh,+517001" 
+                  target="_blank" rel='noreferrer'>
+                  No.14 G 1133, Goolingspet Street, Chittoor, Andhra Pradesh, 517001
+             </a>
                   </p>
                 </div>
               </div>

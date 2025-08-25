@@ -120,6 +120,10 @@
   .desktop-footer {
     display: block;
   }
+  
+  .desktop-footer .footer-brand {
+    justify-content: flex-start;
+  }
 
   .footer-grid {
     display: grid;
@@ -181,13 +185,58 @@
   }
 }
 
-.detail-link{
-  color:#000000
+.detail-link {
+  color: #000000;
 }
-.contact-number{
+.contact-number {
   color: #f9f9f9;
   text-decoration: none;
 }
-.contact-number:hover{
+.contact-number:hover {
   color: #ff9900;
+}
+
+/* ---------- Leadership Section Styles ---------- */
+
+.leadership-info {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.leadership-info .footer-heading {
+  text-align: center;
+}
+
+.leadership-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 0.5rem;
+}
+.leadership-text {
+  flex: 1;
+  max-width: 45%;
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.leadership-text-name {
+  color: #f9f9f9;
+  font-weight: 600;
+}
+
+.mobile-footer .footer-heading {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #ff9900;
+  font-size: 1.1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .desktop-footer .leadership-info {
+    margin-top: 1.5rem;
+  }
 }

@@ -34,6 +34,18 @@ const About = () => {
                 From soft, layered parotas to golden pooris and homestyle sweets, our products bring the comfort of authentic Indian flavors right to your plate
                  — fresh, flavorful, and made with love.
               </p>
+              <div className="leadership-info">
+                <div className='leadership-container'>
+                   <p className="leadership-text">
+                  <strong  >K K Jabreen Afreen</strong> 
+                  <br/><span> Proprietor</span>
+                </p>
+              <p className="leadership-text">
+                  <strong  >Khader Ali</strong>
+                  <br/><span>CEO</span>
+                </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

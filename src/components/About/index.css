@@ -27,6 +27,9 @@
   .grid-layout {
     grid-template-columns: repeat(2, 1fr);
   }
+  .leadership-text strong {
+ font-size: 20px!important
+}
 }
 
 
@@ -64,6 +67,7 @@
 .bottom-section {
   min-height: 40vh;
   text-align: center;
+  padding: 4rem 0; /* Added padding to create space */
 }
 
 .subheading {
@@ -133,6 +137,39 @@
   font-size: 0.875rem;
   color: #555;
 }
+.leadership-text-name{
+    font-size: 20px!important
+}
+
+@media screen and (max-width:768px){
+  .leadership-text{
+    font-size: 0.6rem;
+  }
+  .leadership-text-name{
+    font-size: 10px;
+  }
+
+}
+/* --- Inline Leadership Info Styles (NEW) --- */
+.leadership-info {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+.leadership-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.leadership-text strong {
+  color: #FF8C00
+}
+.leadership-text span{
+  color: black;
+}
+
 
 /* Animations */
 .animate-fade-in {
@@ -236,3 +273,8 @@
     height: 3.5rem;
   }
 }
+.leadership-container{
+  display: flex;
+  justify-content: space-between;
+}
+
