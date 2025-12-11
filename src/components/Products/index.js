@@ -1,5 +1,5 @@
 import { FaWhatsapp, FaPhone } from "react-icons/fa6";
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ShoppingCart, X, Plus, Minus } from 'lucide-react';
 import './index.css';
 
@@ -21,11 +21,18 @@ const Products = () => {
     }
   });
 
+  const isProductInCart = (product) => {
+    if (!product) return false;
+    return cartItems.some(item => item.id === product.id);
+  };
+
+
+
   useEffect(() => {
     localStorage.setItem('bismifreshfoods', JSON.stringify(cartItems));
   }, [cartItems]);
 
-   const products = [
+  const products = [
     {
       id: 1,
       name: "Parota",
@@ -186,7 +193,7 @@ const Products = () => {
   };
 
   const handleClearCart = () => {
-    setCartItems([]); 
+    setCartItems([]);
   };
 
   const handleProceedToWhatsApp = () => {
@@ -252,9 +259,17 @@ const Products = () => {
                   )}
                 </div>
                 {product.tag !== "Upcoming" && (
-                  <button className="order-button" onClick={(e) => { e.stopPropagation(); openProductModal(product); }}>
+                  <button
+                    className={`order-button ${isProductInCart(product) ? "added" : ""}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      openProductModal(product);
+                    }}
+                  >
                     <ShoppingCart className="icon" />
-                    {product.variations.length > 1 ? "Select Options" : "Add to Cart"}
+                    {isProductInCart(product)
+                      ? "Added to Cart"
+                      : (product.variations.length > 1 ? "Select Options" : "Add to Cart")}
                   </button>
                 )}
               </div>
@@ -278,8 +293,8 @@ const Products = () => {
 
       {cartItems.length > 0 && (
         <button className="floating-cart-btn" onClick={() => setIsCartOpen(true)}>
-            <ShoppingCart size={24} />
-            <span className="cart-item-count">{cartItems.reduce((total, item) => total + item.orderQuantity, 0)}</span>
+          <ShoppingCart size={24} />
+          <span className="cart-item-count">{cartItems.reduce((total, item) => total + item.orderQuantity, 0)}</span>
         </button>
       )}
 
@@ -306,13 +321,13 @@ const Products = () => {
                 </div>
               </div>
               {selectedProduct.tag !== 'Upcoming' && (
-                <button 
-                  onClick={() => handleAddToCart(selectedProduct, selectedVariation)} 
+                <button
+                  onClick={() => handleAddToCart(selectedProduct, selectedVariation)}
                   className="modal-order-btn"
                   disabled={!selectedVariation}
                 >
-                  <ShoppingCart size={18} /> 
-                  Add to Cart
+                  <ShoppingCart size={18} />
+                  {isProductInCart(selectedProduct) ? "Added to Cart" : "Add to Cart"}
                 </button>
               )}
             </div>
@@ -324,7 +339,7 @@ const Products = () => {
         <div className="modal-overlay" onClick={() => setIsCartOpen(false)}>
           <div className="modal-content cart-modal" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close" onClick={() => setIsCartOpen(false)}><X size={19} /></button>
-            
+
             <div >
               <h2 className="cart-heading">Your Cart 🛒</h2>
             </div>
@@ -353,9 +368,9 @@ const Products = () => {
                 </div>
                 <div className="cart-header">
                   <button onClick={handleClearCart} className="clear-cart-btn">Clear All</button>
-                <button onClick={handleProceedToWhatsApp} className="modal-order-btn cart-proceed-btn">
-                  Confirm Order
-                </button>
+                  <button onClick={handleProceedToWhatsApp} className="modal-order-btn cart-proceed-btn">
+                    Confirm Order
+                  </button>
                 </div>
               </>
             ) : (

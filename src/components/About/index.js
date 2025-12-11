@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Award, CheckCircle, Sparkles , BadgeCheck, Building2 } from 'lucide-react';
+import { Shield, Award, CheckCircle, Sparkles, BadgeCheck, Building2 } from 'lucide-react';
 import './index.css';
 
 const About = () => {
@@ -27,23 +27,23 @@ const About = () => {
             <div className="description animate-slide-up">
               <h2 className="heading">About Bismi Fresh Foods</h2>
               <p className="paragraph">
-                At Bismi Fresh Foods, we don’t just make food — we preserve heritage. 
+                At Bismi Fresh Foods, we don’t just make food — we preserve heritage.
                 Every bite tells a story of tradition, crafted with care using time-honored recipes and quality ingredients.
               </p>
               <p className="paragraph">
                 From soft, layered parotas to golden pooris and homestyle sweets, our products bring the comfort of authentic Indian flavors right to your plate
-                 — fresh, flavorful, and made with love.
+                — fresh, flavorful, and made with love.
               </p>
               <div className="leadership-info">
                 <div className='leadership-container'>
-                   <p className="leadership-text">
-                  <strong  >K K Jabreen Afreen</strong> 
-                  <br/><span> Proprietor</span>
-                </p>
-              <p className="leadership-text">
-                  <strong  >Khader Ali</strong>
-                  <br/><span>CEO</span>
-                </p>
+                  <p className="leadership-text">
+                    <strong  >K K Jabreen Afreen</strong>
+                    <br /><span> Proprietor</span>
+                  </p>
+                  <p className="leadership-text">
+                    <strong  >Khader Ali</strong>
+                    <br /><span>CEO</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -86,20 +86,28 @@ const About = () => {
               <p className="icon-text">Made Fresh Every Day</p>
             </div>
             <div className="trust-box animate-bounce-in delay-4">
-            <div className="icon-circle">
-              <BadgeCheck size={32} /> 
+              <div className="icon-circle">
+                <BadgeCheck size={32} />
+              </div>
+              <h4 className="icon-title">GSTIN</h4>
+              <p className="icon-text">No: 37DPVPA0357F1ZT</p>
             </div>
-            <h4 className="icon-title">GSTIN</h4>
-            <p className="icon-text">No: 37DPVPA0357F1ZT</p>
-          </div>
 
-          <div className="trust-box animate-bounce-in delay-5">
-            <div className="icon-circle">
-              <Building2 size={32} /> 
+            <div className="trust-box animate-bounce-in delay-5">
+              <div className="icon-circle">
+                <Building2 size={32} />
+              </div>
+              <h4 className="icon-title">MSME Certified</h4>
+              <p className="icon-text">No: UDYAM-AP-02-0019456</p>
             </div>
-            <h4 className="icon-title">MSME Certified</h4>
-            <p className="icon-text">No: UDYAM-AP-02-0019456</p>
-          </div>
+            <div className="trust-box animate-bounce-in delay-6">
+              <div className="icon-circle">
+                <CheckCircle size={32} />
+              </div>
+              <h4 className="icon-title">ISO 9001:2015 Certified</h4>
+              <p className="icon-text">Certificate No: 305025112470Q</p>
+            </div>
+
           </div>
         </div>
       </div>

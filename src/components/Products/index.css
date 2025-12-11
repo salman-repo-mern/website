@@ -8,7 +8,7 @@ html {
 }
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #FFF8F2; /* A warm off-white background */
+  background-color: #FFF8F2;
   color: #3D352E;
   width: 100%;
   overflow-x: hidden;
@@ -409,11 +409,6 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/*
- =========================================
-   NEW CART FEATURE STYLES
- =========================================
-*/
 
 /* --- Floating Cart Button --- */
 .floating-cart-btn {
@@ -580,6 +575,12 @@ body {
     align-items: center!important;
   }
   .cart-heading{
+    margin-top: 15px!important
+  }
+  .combo-button,
+  .call-button {
+    width: 100%;
+    margin-left: 0 !important;
     margin-top: 10px;
   }
   .clear-cart-btn{
@@ -806,3 +807,9 @@ body {
 .clear-cart-btn:hover {
   background-color: #ff4d4d1a; 
 }
+
+
+.cart-heading{
+  margin-top: 15px;
+}
+

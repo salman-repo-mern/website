@@ -1,4 +1,4 @@
-/* General Setup and Fonts */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 body {
@@ -14,27 +14,34 @@ body {
 }
 
 .app-container {
-  background-color: #F9FAFB; /* bg-gray-50 */
+  background-color: #F9FAFB;
   min-height: 100vh;
 }
 
 /* Contact Section Styling */
 .contact-section {
-  padding: 4rem 1rem; /* py-16 px-4 */
+  padding: 4rem 1rem; 
 }
 
 @media (min-width: 640px) {
   .contact-section {
-    padding: 6rem 1.5rem; /* sm:py-24 sm:px-6 */
+    padding: 6rem 1.5rem;
   }
 }
 
 @media (min-width: 1024px) {
   .contact-section {
-    padding-left: 2rem; /* lg:px-8 */
+    padding-left: 2rem;
     padding-right: 2rem;
   }
 }
+
+@media (max-width: 480px) {
+  .detail-link {
+    font-size: 0.9rem;
+  }
+}
+
 
 .container {
   max-width: 1280px; /* max-w-7xl */
@@ -49,49 +56,47 @@ body {
 }
 
 .section-title {
-  font-size: 2.25rem; /* text-4xl */
+  font-size: 2.25rem;
   line-height: 2.5rem;
-  font-weight: 700; /* font-bold */
-  color: #1F2937; /* text-gray-800 */
-  letter-spacing: -0.025em; /* tracking-tight */
+  font-weight: 700; 
+  color: #1F2937; 
+  letter-spacing: -0.025em; 
 }
 
 @media (min-width: 768px) {
   .section-title {
-    font-size: 3rem; /* md:text-5xl */
+    font-size: 3rem;
     line-height: 1;
   }
 }
 
 .section-subtitle {
-  margin-top: 1rem; /* mt-4 */
-  max-width: 42rem; /* max-w-2xl */
+  margin-top: 1rem; 
+  max-width: 42rem; 
   margin-left: auto;
   margin-right: auto;
-  font-size: 1.125rem; /* text-lg */
+  font-size: 1.125rem; 
   line-height: 1.75rem;
-  color: #4B5563; /* text-gray-600 */
+  color: #4B5563; 
 }
 
-/* Grid Layout */
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 3rem; /* gap-12 */
+  gap: 3rem; 
   align-items: flex-start;
 }
 
 @media (min-width: 1024px) {
   .contact-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 4rem; /* lg:gap-16 */
+    gap: 4rem; 
   }
 }
 
-/* Form Styling */
 .form-container {
   background-color: #ffffff;
-  padding: 2rem; /* p-8 */
+  padding: 2rem; 
   border-radius: 1rem; /* rounded-2xl */
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-lg */
   width: 100%;
